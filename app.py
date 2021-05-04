@@ -3,16 +3,13 @@ import blowfish
 from qiskit import QuantumCircuit, Aer, transpile, assemble
 from numpy.random import randint
 import numpy as np
+import base64
 
 app = Flask(__name__)
 
 envAuthKey = "123authkey123"
 
 @app.route('/')
-def home():
-  return "Deployed Successfully!!!😁😎😁"
-
-@app.route('/generate')
 def send_key():
   auth_key = request.headers.get("authKey")
   if(auth_key!=envAuthKey):
@@ -31,8 +28,9 @@ def send_key():
   ciphertext3 = cipher.encrypt_block(b3)
   ciphertext4 = cipher.encrypt_block(b4)
   ciphertext = ciphertext1+ciphertext2+ciphertext3+ciphertext4
-  return ciphertext
-
+  ct = base64.b64encode(ciphertext)
+  return ct
+  
 def listToString(s):   
   str1 = ""   
   for ele in s:
