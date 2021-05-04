@@ -11,7 +11,7 @@ envAuthKey = "123authkey123"
 
 @app.route('/')
 def home():
-  return "Deployed Successfully!!!😁😎😁"
+  return "I like food better than your face"
 
   
 @app.route('/generate')
