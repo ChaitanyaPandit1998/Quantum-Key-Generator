@@ -9,6 +9,10 @@ app = Flask(__name__)
 envAuthKey = "123authkey123"
 
 @app.route('/')
+def home():
+  return "Deployed Successfully!!!😁😎😁"
+
+@app.route('/generate')
 def send_key():
   auth_key = request.headers.get("authKey")
   if(auth_key!=envAuthKey):
