@@ -63,3 +63,4 @@ websockets==8.1
 Werkzeug==1.0.1
 yfinance==0.1.55
 zipp==3.4.1
+gunicorn
