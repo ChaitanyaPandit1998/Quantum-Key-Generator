@@ -13,6 +13,7 @@ docplex==2.20.204
 fastdtw==0.3.4
 fastjsonschema==2.15.0
 Flask==1.1.2
+Flask-Cors==3.0.10
 h5py==3.1.0
 idna==2.10
 importlib-metadata==4.0.1
@@ -62,4 +63,3 @@ websockets==8.1
 Werkzeug==1.0.1
 yfinance==0.1.55
 zipp==3.4.1
-gunicorn

@@ -1,12 +1,13 @@
 from flask import Flask,request
 import blowfish
+from flask_cors import CORS
 from qiskit import QuantumCircuit, Aer, transpile, assemble
 from numpy.random import randint
 import numpy as np
 import base64
 
 app = Flask(__name__)
-
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 envAuthKey = "123authkey123"
 
 @app.route('/')
